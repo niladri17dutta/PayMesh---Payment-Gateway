@@ -13,7 +13,6 @@
 
 ### A Self-Hosted UPI Payment Gateway for Merchants
 
-**Originally created by [Gaurav](https://github.com/gxurav1710). The project is now maintained by [Zenuxs](https://zenuxs.in).**
 **0% Gateway Fees • Direct-to-Bank Settlement • WhatsApp Pre-Checkout OTP • Bank SMS & Gmail Observers**
 
 > [!IMPORTANT]
@@ -257,13 +256,10 @@ This section is a practical project warning, not a certification, compliance che
 
 ### Native Host Quickstart
 
-#### 1. Clone & Install Dependencies
-
+#### 1. Install Dependencies
 Standard `npm install` works out-of-the-box across all packages and apps without any protocol issues:
 
 ```bash
-git clone https://github.com/youpi-pg/YouPI-PG.git youpi-pg
-cd youpi-pg
 npm install
 ```
 

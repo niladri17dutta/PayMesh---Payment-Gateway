@@ -132,7 +132,7 @@ export class GmailObserverServer {
         }
         let clientId = '';
         let configuredRedirectUri = '';
-        const isLocalhost = process.env.YOUPI_MODE === 'localhost' || !process.env.YOUPI_MODE || this.poller.apiBaseUrl?.includes('vvisa.in') || this.poller.apiBaseUrl?.includes('gauravtesting.online');
+        const isLocalhost = process.env.YOUPI_MODE === 'localhost' || !process.env.YOUPI_MODE;
         const apiBase = isLocalhost ? `http://127.0.0.1:${process.env.PAYMENT_API_PORT || 6100}` : (this.poller.apiBaseUrl || `http://127.0.0.1:${process.env.PAYMENT_API_PORT || 6100}`);
         try {
           const credRes = await fetch(`${apiBase}/api/v1/admin/gmail/credentials`, { headers: { Authorization: `Bearer ${getObserverToken()}` } });
@@ -189,7 +189,7 @@ export class GmailObserverServer {
           let clientId = '';
           let clientSecret = '';
           let callbackRedirectUri = '';
-          const isLocalhost = process.env.YOUPI_MODE === 'localhost' || !process.env.YOUPI_MODE || this.poller.apiBaseUrl?.includes('vvisa.in') || this.poller.apiBaseUrl?.includes('gauravtesting.online');
+          const isLocalhost = process.env.YOUPI_MODE === 'localhost' || !process.env.YOUPI_MODE;
           const apiBase = isLocalhost ? `http://127.0.0.1:${process.env.PAYMENT_API_PORT || 6100}` : (this.poller.apiBaseUrl || `http://127.0.0.1:${process.env.PAYMENT_API_PORT || 6100}`);
 
           try {
