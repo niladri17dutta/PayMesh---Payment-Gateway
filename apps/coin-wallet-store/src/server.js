@@ -613,8 +613,9 @@ export class CoinWalletStoreServer {
               checkoutUrl: resolvedCheckoutUrl
             }));
           } catch (err) {
+            console.error('[Coin Wallet Store] /api/checkout failed:', err.message);
             res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: 'Unable to create payment' }));
+            res.end(JSON.stringify({ error: err.message || 'Unable to create payment' }));
           }
         });
         return;
