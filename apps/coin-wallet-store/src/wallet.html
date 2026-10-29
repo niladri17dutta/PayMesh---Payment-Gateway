@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Customer Account · YOUPI Store</title>
+  <title>Customer Account · PayMesh Store</title>
   <style>
     :root {
       --bg: #090d16;
@@ -154,7 +154,7 @@
 <header>
   <a href="/" class="brand">
     <span class="brand-icon">⚡</span>
-    <span>YOUPI Store</span>
+    <span>PayMesh Store</span>
   </a>
   <a href="/" class="btn btn-buy" style="padding:0.45rem 1rem; font-size:0.85rem; text-decoration:none;">
     ← Back to Store
@@ -208,7 +208,7 @@
   </div>
 </main>
 
-<!-- Quick Pack Chooser Modal (Directly opens YouPI Drawer) -->
+<!-- Quick Pack Chooser Modal (Directly opens PayMesh Drawer) -->
 <div class="quick-modal" id="quickModal">
   <div class="quick-modal-card">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
@@ -250,7 +250,7 @@
   </div>
 </div>
 
-<!-- Universal YOUPI PG Integration SDK -->
+<!-- Universal PayMesh Integration SDK -->
 <script src="/youpi.js"></script>
 
 <script>
@@ -312,7 +312,7 @@
             checkoutUrl: data.checkoutUrl,
             order_id: data.orderId,
             amount: price,
-            name: 'YOUPI Store',
+            name: 'PayMesh Store',
             description: `${packName}`,
             handler: async function(paymentResponse) {
               // Direct instant credit

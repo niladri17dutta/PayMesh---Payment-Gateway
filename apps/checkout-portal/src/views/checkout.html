@@ -1651,7 +1651,7 @@
     function renderState(data) {
       state = data;
       const b = data.branding || {};
-      const appName = b.appName || 'YouPI PG';
+      const appName = b.appName || 'PayMesh';
       const merchantName = data.merchantName || 'Merchant Checkout';
 
       // 1. Dynamic Title
@@ -1894,7 +1894,7 @@
         if (splashDefaultShield) splashDefaultShield.style.display = 'none';
       }
       if (splashSecuredText) {
-        splashSecuredText.textContent = b.hidePoweredBy ? (b.appName || '256-Bit Bank Encryption') : (b.appName || 'YouPI PG');
+        splashSecuredText.textContent = b.hidePoweredBy ? (b.appName || '256-Bit Bank Encryption') : (b.appName || 'PayMesh');
       }
 
       // 12. Legal Disclaimer Strip
@@ -2073,7 +2073,7 @@
             if (codApiBox) codApiBox.style.display = 'none';
           } else {
             if (titleEl) titleEl.textContent = 'Payment Successful!';
-            const activeAppName = state?.branding?.appName || '{{APP_NAME}}' || 'YouPI PG';
+            const activeAppName = state?.branding?.appName || '{{APP_NAME}}' || 'PayMesh';
             if (descEl) descEl.textContent = `Your payment was automatically verified by ${activeAppName} banking observers.`;
             if (codApiBox) codApiBox.style.display = 'none';
           }

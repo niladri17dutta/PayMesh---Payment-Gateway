@@ -424,7 +424,7 @@ describe('Coin Top-Up Wallet Demo Store Integration Tests', () => {
     assert.ok(res.body.includes('ORD-SUCC-123'));
     assert.ok(res.body.includes('499.00'));
     assert.ok(res.body.includes('998877665544'));
-    assert.ok(res.body.includes('VERIFIED BY YOUPI PG'));
+    assert.ok(res.body.includes('VERIFIED BY PAYMESH') || res.body.includes('VERIFIED BY YOUPI PG'));
   });
 
   test('GET /order-suspicious renders held for review security notice', async () => {

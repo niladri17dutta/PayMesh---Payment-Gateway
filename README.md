@@ -1,15 +1,15 @@
 <div align="center">
 
 ```
-██╗   ██╗ ██████╗ ██╗   ██╗██████╗ ██╗    ██████╗  ██████╗
-╚██╗ ██╔╝██╔═══██╗██║   ██║██╔══██╗██║    ██╔══██╗██╔════╝
- ╚████╔╝ ██║   ██║██║   ██║██████╔╝██║    ██████╔╝██║  ███╗
-  ╚██╔╝  ██║   ██║██║   ██║██╔═══╝ ██║    ██╔═══╝ ██║   ██║
-   ██║   ╚██████╔╝╚██████╔╝██║     ██║    ██║     ╚██████╔╝
-   ╚═╝    ╚═════╝  ╚═════╝ ╚═╝     ╚═╝    ╚═╝      ╚═════╝
+██████╗  █████╗ ██╗   ██╗███╗   ███╗███████╗███████╗██╗  ██╗
+██╔══██╗██╔══██╗╚██╗ ██╔╝████╗ ████║██╔════╝██╔════╝██║  ██║
+██████╔╝███████║ ╚████╔╝ ██╔████╔██║█████╗  ███████╗███████║
+██╔═══╝ ██╔══██║  ╚██╔╝  ██║╚██╔╝██║██╔══╝  ╚════██║██╔══██║
+██║     ██║  ██║   ██║   ██║ ╚═╝ ██║███████╗███████║██║  ██║
+╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
 ```
 
-# YOUPI PG V2
+# PayMesh - A self-hosted payment gateway for merchants
 
 ### A Self-Hosted UPI Payment Gateway for Merchants
 
@@ -19,7 +19,7 @@
 >
 > ## Research Project — Experimental Use Only
 >
-> **YOUPI PG V2 is an independent, experimental research and learning project. It is not represented as a certified, bank-approved, NPCI-approved, audited, or production-ready payment gateway.** It is published primarily for external developers to study, test, review, and contribute to.
+> **PayMesh is an independent, experimental research and learning project. It is not represented as a certified, bank-approved, NPCI-approved, audited, or production-ready payment gateway.** It is published primarily for external developers to study, test, review, and contribute to.
 >
 > - **Appropriate scope:** local development, test environments, demos, learning, and carefully controlled experiments. Small projects or early-stage businesses may evaluate it only after independently assessing the risks and their legal/compliance obligations.
 > - **Not for critical payments:** do not rely on it for essential, high-value, high-volume, time-sensitive, or business-critical transactions. Do not use it as the sole source of truth for payment confirmation.
@@ -47,7 +47,7 @@
 
 <p align="center">
   <a href="#-live-product-demos">Live Demos</a> •
-  <a href="#-the-problem-vs-the-youpi-solution">Why YOUPI?</a> •
+  <a href="#-the-problem-vs-the-youpi-solution">Why PayMesh?</a> •
   <a href="#-architecture-at-a-glance">Architecture</a> •
   <a href="#-key-features--superpowers">Superpowers</a> •
   <a href="#-quickstart-in-60-seconds">Quickstart</a> •
@@ -65,7 +65,7 @@
 
 ## Live Product Demos
 
-See **YOUPI PG V2** live in action across Desktop and Mobile checkout flows:
+See **PayMesh** live in action across Desktop and Mobile checkout flows:
 
 |                                                                                                                                              Desktop Modal Flow                                                                                                                                               |                                                                                                                  Mobile Drawer & App Switcher                                                                                                                   |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -84,7 +84,7 @@ See **YOUPI PG V2** live in action across Desktop and Mobile checkout flows:
 
 Traditional payment gateways (Razorpay, Cashfree, PayU, Stripe) lock your revenue into high fees, multi-day settlement delays, and sudden compliance freezes:
 
-| Comparison Metric               | Traditional Aggregators (Razorpay / Cashfree)      | YOUPI PG (Self-Hosted Sovereign)                                                                                |
+| Comparison Metric               | Traditional Aggregators (Razorpay / Cashfree)      | PayMesh (Self-Hosted Sovereign)                                                                                 |
 | :------------------------------ | :------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
 | **Transaction Fee**             | **2.0% – 3.0% + 18% GST** per transaction          | **0.0% (Zero Fees Forever)**                                                                                    |
 | **Settlement Speed**            | **T+2 to T+3 Business Days** (Holdbacks)           | **Direct transfer; timing and availability depend on the bank and UPI rails**                                   |
@@ -102,7 +102,7 @@ Traditional payment gateways (Razorpay, Cashfree, PayU, Stripe) lock your revenu
 
 ## Architecture at a Glance
 
-YOUPI PG is designed to use standard Indian personal or business UPI receiving accounts for payment collection by coupling **pure vector SVG QR codes** with an **automated multi-channel banking observation mesh**.
+PayMesh is designed to use standard Indian personal or business UPI receiving accounts for payment collection by coupling **pure vector SVG QR codes** with an **automated multi-channel banking observation mesh**.
 
 ```mermaid
 flowchart LR
@@ -111,7 +111,7 @@ flowchart LR
         Cart[Checkout Button]
     end
 
-    subgraph Gateway["YOUPI Gateway Instance"]
+    subgraph Gateway["PayMesh Gateway Instance"]
         AuthGate[WhatsApp Berry Auth<br/>6-Digit OTP]
         Queue[Single-Slot FIFO Queue<br/>Deterministic Arbiter]
         VectorQR[ISO Vector QR Engine<br/>UPI URI]
@@ -161,7 +161,7 @@ No more fake orders, bot spam, or fraudulent phone numbers. Before a customer ca
 
 ### 3. Deterministic Single-Slot FIFO Queue Engine
 
-Because standard UPI alerts do not carry arbitrary merchant metadata, multiple concurrent transactions with identical amounts could create attribution confusion. YOUPI PG solves this with a mathematical invariant:
+Because standard UPI alerts do not carry arbitrary merchant metadata, multiple concurrent transactions with identical amounts could create attribution confusion. PayMesh solves this with a mathematical invariant:
 
 - **Only ONE customer can pay on a VPA at a time.**
 - Other buyers wait in a database-backed FIFO queue with live position streaming.
@@ -273,7 +273,7 @@ _(The default `.env` is pre-configured for localhost out of the box)._
 
 ### 3. Start the Services
 
-On first launch, YOUPI PG automatically provisions `data/youpi_pg.sqlite`, creates the directory if missing, and executes idempotent migrations and baseline seeds. No manual database setup is required:
+On first launch, PayMesh automatically provisions `data/youpi_pg.sqlite`, creates the directory if missing, and executes idempotent migrations and baseline seeds. No manual database setup is required:
 
 ```bash
 npm run dev
@@ -285,7 +285,7 @@ The services can then be accessed at the following local addresses:
 
 - **Control Center Supervisor:** [`http://localhost:8090`](http://localhost:8090)
 - **Merchant Admin Panel:** [`http://localhost:6001`](http://localhost:6001)
-- **YOUPI Showcase Demo Store:** [`http://localhost:5000`](http://localhost:5000)
+- **PayMesh Showcase Demo Store:** [`http://localhost:5000`](http://localhost:5000)
 - **Payment REST API:** [`http://localhost:6100`](http://localhost:6100)
 - **Customer Checkout Portal:** [`http://localhost:7000`](http://localhost:7000)
 
@@ -299,7 +299,7 @@ npm test
 
 ```text
 ============================================================
- YOUPI PG V2 — FULL REGRESSION TEST RUNNER
+ PayMesh — FULL REGRESSION TEST RUNNER
 Running 31 curated test suites...
 ============================================================
 [1/31] Testing packages/common/src/__tests__/common.test.js...  PASS (0.22s)
@@ -316,12 +316,12 @@ Running 31 curated test suites...
 
 ## Universal Merchant Integration
 
-YOUPI PG can be integrated into a website, web application, or e-commerce store using the following steps.
+PayMesh can be integrated into a website, web application, or e-commerce store using the following steps.
 
 ### Step 1: Add the Universal Script to your `<head>`
 
 ```html
-<!-- Official YOUPI PG Universal Integration Script -->
+<!-- Official PayMesh Universal Integration Script -->
 <script
   src="https://pay.yourdomain.com/youpi.js"
   data-youpi-key="YOUR_MERCHANT_PUBLIC_KEY"
@@ -340,7 +340,7 @@ Add `data-youpi-pay` attributes to any existing HTML button:
   data-amount="499.00"
   data-currency="INR"
 >
-  Buy Now with YOUPI PG
+  Buy Now with PayMesh
 </button>
 ```
 
@@ -535,7 +535,7 @@ func youpiWebhookHandler(w http.ResponseWriter, r *http.Request) {
 
 ## Tri-Channel Observation Mesh
 
-YOUPI PG confirms payments without expensive commercial banking APIs using a triple-layer observation pipeline:
+PayMesh confirms payments without expensive commercial banking APIs using a triple-layer observation pipeline:
 
 ```text
               CUSTOMER SCANS & PAYS VIA UPI
@@ -643,7 +643,7 @@ See [`LICENSE`](LICENSE) for the actual license terms. A license to use the code
 
 <div align="center">
 
-### YOUPI PG
+### PayMesh
 
 **Self-hosted payment infrastructure with direct UPI settlement.**
 

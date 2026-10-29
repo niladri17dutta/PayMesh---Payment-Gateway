@@ -32,7 +32,7 @@ const runInLocalhostMode = allowLocalhostMode && requestedMode === 'localhost';
 
 if (runInLocalhostMode) {
   console.log('\n====================================================');
-  console.log('🚀 Starting YOUPI PG V2 — Localhost Mode (explicit opt-in)');
+  console.log('🚀 Starting PayMesh V2 — Localhost Mode (explicit opt-in)');
   console.log('====================================================');
   process.env.YOUPI_MODE = 'localhost';
   process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -41,7 +41,7 @@ if (runInLocalhostMode) {
   process.env.NODE_ENV = 'production';
 
   console.log('\n====================================================');
-  console.log('🚀 Starting YOUPI PG V2 — Production Gateway');
+  console.log('🚀 Starting PayMesh V2 — Production Gateway');
   console.log('====================================================');
 }
 
@@ -101,8 +101,8 @@ await cc.processManager.startAll();
 
 console.log('====================================================');
 console.log(runInLocalhostMode
-  ? '🟢 YOUPI PG V2 GATEWAY ONLINE & ACTIVE (localhost mode)'
-  : '🟢 YOUPI PG V2 PRODUCTION GATEWAY ONLINE & ACTIVE');
+  ? '🟢 PayMesh V2 GATEWAY ONLINE & ACTIVE (localhost mode)'
+  : '🟢 PayMesh V2 PRODUCTION GATEWAY ONLINE & ACTIVE');
 console.log('====================================================');
 console.log(runInLocalhostMode ? 'LOCAL SERVICE ROUTES:' : 'AUTHORITATIVE PUBLIC CLOUDFLARE ROUTES:');
 console.log(`• Checkout Portal:      ${runtimeUrls.checkoutUrl}  (-> :7000)`);

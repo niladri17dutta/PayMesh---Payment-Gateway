@@ -51,7 +51,7 @@ const testFiles = [
 ];
 
 console.log('============================================================');
-console.log('🧪 YOUPI PG V2 — FULL REGRESSION TEST RUNNER');
+console.log('🧪 PayMesh V2 — FULL REGRESSION TEST RUNNER');
 console.log(`Running ${testFiles.length} curated test suites...`);
 console.log(`Per-suite timeout: ${PER_SUITE_TIMEOUT_MS / 1000}s`);
 console.log('============================================================\n');

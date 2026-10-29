@@ -3,7 +3,7 @@
  */
 
 export const DefaultBranding = Object.freeze({
-  appName: 'YOUPI PG',
+  appName: 'PayMesh',
   primaryColor: '#2563eb',
   logoUrl: null
 });
