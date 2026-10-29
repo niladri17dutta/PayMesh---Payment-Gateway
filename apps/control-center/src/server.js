@@ -221,7 +221,11 @@ export class ControlCenterServer {
           'Cache-Control': 'no-cache',
           ...BASE_SECURITY_HEADERS
         });
-        res.end(this.template);
+        try {
+          res.end(fs.readFileSync(this.htmlTemplatePath, 'utf8'));
+        } catch {
+          res.end(this.template);
+        }
         return;
       }
 
