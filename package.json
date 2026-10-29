@@ -1,5 +1,5 @@
 {
-  "name": "youpi-pg",
+  "name": "paymesh",
   "version": "1.0.0",
   "type": "module",
   "description": "Self-Hosted White-Label UPI Payment Gateway with Payment Observation Engine",
@@ -29,9 +29,9 @@
     "typescript": "^7.0.2"
   },
   "engines": {
-    "node": ">=24.22.1"
+    "node": ">=22.13.0"
   },
-  "author": "Antigravity Systems",
+  "author": "PayMesh",
   "license": "Commercial",
   "allowScripts": {
     "better-sqlite3@12.11.1": true,
