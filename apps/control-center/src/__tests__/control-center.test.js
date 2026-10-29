@@ -131,7 +131,11 @@ describe('ProcessManager child lifecycle', () => {
     const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'youpi-process-test-'));
     const script = path.join(directory, 'service.cjs');
     fs.writeFileSync(script, `
-      process.on('SIGTERM', () => { ${shutdownBody} });
+      const onShutdown = () => { ${shutdownBody} };
+      process.on('SIGTERM', onShutdown);
+      process.on('message', (msg) => {
+        if (msg === 'SIGTERM' || msg?.type === 'SIGTERM') onShutdown();
+      });
       setInterval(() => {}, 1000);
       process.send('ready');
     `);

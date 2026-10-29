@@ -233,7 +233,15 @@ export class ProcessManager extends EventEmitter {
       killTimer.unref();
       child.once('exit', onExit);
       child.once('error', onError);
-      try { child.kill('SIGTERM'); } catch (err) { onError(err); }
+      if (process.platform === 'win32' && child.connected) {
+        try {
+          child.send('SIGTERM');
+        } catch {
+          try { child.kill('SIGTERM'); } catch (err) { onError(err); }
+        }
+      } else {
+        try { child.kill('SIGTERM'); } catch (err) { onError(err); }
+      }
     });
     svc.stopPromise = stopping;
     try {
